@@ -1,0 +1,108 @@
+import { RiskAlert } from "@/types/risk";
+
+export const mockAlerts: RiskAlert[] = [
+  {
+    id: "ALT-001",
+    title: "Suez Canal Congestion Critical",
+    description: "Vessel queue exceeds 80+ ships. Average transit delay 72hrs. Multiple container ships rerouting via Cape of Good Hope.",
+    severity: "critical",
+    category: "port-congestion",
+    region: "Middle East",
+    timestamp: new Date(Date.now() - 1000 * 60 * 15),
+    affectedShipments: 142,
+    source: "AIS / Port Authority",
+  },
+  {
+    id: "ALT-002",
+    title: "Typhoon Gaemi Approaching Taiwan Strait",
+    description: "Category 4 typhoon expected to disrupt shipping lanes in 48hrs. Wind speeds 220km/h.",
+    severity: "high",
+    category: "weather",
+    region: "Asia Pacific",
+    timestamp: new Date(Date.now() - 1000 * 60 * 45),
+    affectedShipments: 89,
+    source: "NOAA Weather",
+  },
+  {
+    id: "ALT-003",
+    title: "Rotterdam Port Workers Strike",
+    description: "Union workers initiating 48hr strike. Terminal operations reduced to 30% capacity.",
+    severity: "high",
+    category: "labor",
+    region: "Europe",
+    timestamp: new Date(Date.now() - 1000 * 60 * 120),
+    affectedShipments: 67,
+    source: "Reuters",
+  },
+  {
+    id: "ALT-004",
+    title: "Red Sea Security Threat Elevated",
+    description: "Multiple drone and missile incidents reported. Insurance premiums increased 200%.",
+    severity: "critical",
+    category: "geopolitical",
+    region: "Middle East",
+    timestamp: new Date(Date.now() - 1000 * 60 * 180),
+    affectedShipments: 203,
+    source: "UKMTO / Intelligence",
+  },
+  {
+    id: "ALT-005",
+    title: "Panama Canal Water Level Warning",
+    description: "Drought conditions reducing daily transits to 24 from normal 36. Booking slots scarce.",
+    severity: "medium",
+    category: "weather",
+    region: "Americas",
+    timestamp: new Date(Date.now() - 1000 * 60 * 300),
+    affectedShipments: 45,
+    source: "Panama Canal Authority",
+  },
+  {
+    id: "ALT-006",
+    title: "Shanghai Port Cyber Incident",
+    description: "Systems partially offline due to suspected cyberattack. Manual processing causing delays.",
+    severity: "medium",
+    category: "geopolitical",
+    region: "Asia Pacific",
+    timestamp: new Date(Date.now() - 1000 * 60 * 400),
+    affectedShipments: 34,
+    source: "Port Authority",
+  },
+  {
+    id: "ALT-007",
+    title: "US West Coast Fog Advisory",
+    description: "Dense fog reducing visibility at LA/Long Beach ports. Minor delays expected.",
+    severity: "low",
+    category: "weather",
+    region: "Americas",
+    timestamp: new Date(Date.now() - 1000 * 60 * 500),
+    affectedShipments: 12,
+    source: "NWS",
+  },
+];
+
+export const mockShipments = [
+  { id: "SHP-4821", origin: "Shanghai", destination: "Rotterdam", status: "at-risk", riskScore: 87, eta: "Mar 14", vessel: "MSC Gloria", route: "Suez Canal" },
+  { id: "SHP-4835", origin: "Shenzhen", destination: "Los Angeles", status: "at-risk", riskScore: 72, eta: "Mar 18", vessel: "Ever Golden", route: "Trans-Pacific" },
+  { id: "SHP-4847", origin: "Hamburg", destination: "Singapore", status: "critical", riskScore: 94, eta: "Mar 22", vessel: "Maersk Emerald", route: "Red Sea" },
+  { id: "SHP-4856", origin: "Busan", destination: "Long Beach", status: "monitoring", riskScore: 45, eta: "Mar 16", vessel: "ONE Harmony", route: "Trans-Pacific" },
+  { id: "SHP-4863", origin: "Rotterdam", destination: "New York", status: "clear", riskScore: 18, eta: "Mar 12", vessel: "CMA Rossini", route: "Trans-Atlantic" },
+];
+
+export const riskTrendData = [
+  { date: "Feb 28", critical: 3, high: 8, medium: 12, low: 22 },
+  { date: "Mar 01", critical: 4, high: 7, medium: 14, low: 20 },
+  { date: "Mar 02", critical: 5, high: 9, medium: 11, low: 19 },
+  { date: "Mar 03", critical: 4, high: 11, medium: 13, low: 21 },
+  { date: "Mar 04", critical: 6, high: 10, medium: 15, low: 18 },
+  { date: "Mar 05", critical: 5, high: 12, medium: 14, low: 20 },
+  { date: "Mar 06", critical: 7, high: 11, medium: 12, low: 17 },
+  { date: "Mar 07", critical: 6, high: 13, medium: 11, low: 19 },
+];
+
+export const regionRiskData = [
+  { region: "Asia Pacific", risks: 24, critical: 4, trend: "up" },
+  { region: "Middle East", risks: 18, critical: 6, trend: "up" },
+  { region: "Europe", risks: 14, critical: 2, trend: "stable" },
+  { region: "Americas", risks: 11, critical: 1, trend: "down" },
+  { region: "Africa", risks: 7, critical: 1, trend: "stable" },
+];
